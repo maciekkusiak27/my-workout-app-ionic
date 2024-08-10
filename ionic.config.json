@@ -1,0 +1,7 @@
+{
+  "name": "myWorkoutApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
