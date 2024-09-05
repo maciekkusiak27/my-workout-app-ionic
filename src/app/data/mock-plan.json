@@ -1,0 +1,28 @@
+{
+    "name": "Nazwa planu",
+    "description": "opsi planu",
+    "plan": {
+      "day1": {
+        "1": "wyciskanie hantli 10-15kg 4x12",
+        "2": "Wiosłowanie 10-15kg 4x12",
+        "3": "Wyciskanie8-10kg 4x12",
+        "4": "drążek"
+      },
+      "day2": {
+       "1": "cwiczenie 1",
+        "2": "cwiczenie 2",
+        "3": "cwiczenie 3"
+      },
+      "day3": {
+       "1": "cwiczenie 1",
+        "2": "cwiczenie 2",
+        "3": "cwiczenie 3"
+      },
+      "day4": {
+        "1": "cwiczenie 1",
+        "2": "cwiczenie 2",
+        "3": "cwiczenie 3"
+      }
+    }
+  }
+  

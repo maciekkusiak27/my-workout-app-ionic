@@ -1,7 +1,8 @@
-import { Component, EnvironmentInjector, inject } from '@angular/core';
+import { Component, } from '@angular/core';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { triangle, ellipse, square } from 'ionicons/icons';
+import { clipboard, home, settings } from 'ionicons/icons';
+import trainingPlan from '../data/mockData';
 
 @Component({
   selector: 'app-tabs',
@@ -11,9 +12,18 @@ import { triangle, ellipse, square } from 'ionicons/icons';
   imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
 })
 export class TabsPage {
-  public environmentInjector = inject(EnvironmentInjector);
+  currentDayIndex: number = 0;
+
+  get todayExercises() {
+    return trainingPlan.plan[this.currentDayIndex];
+  }
+
+  nextDay() {
+    this.currentDayIndex = (this.currentDayIndex + 1) % trainingPlan.plan.length;
+  }
+
 
   constructor() {
-    addIcons({ triangle, ellipse, square });
+    addIcons({ home, clipboard, settings });
   }
 }

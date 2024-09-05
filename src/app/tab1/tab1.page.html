@@ -1,17 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="home-page">
+  <img src="./../../assets/logo.png" alt="logo" />
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-content>
+    <h3 class="colorRed">Dzień {{ todayExercises.day }}</h3>
+    <p>{{ todayExercises.description }}</p>
+    <p *ngFor="let exercise of todayExercises.exercises">
+      {{ exercise.instruction }}
+      <span class="colorRed">{{ exercise.weight }}</span> 
+      {{ exercise.series}}x{{ exercise.replies }}
+    </p>
+  </ion-content>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <div class="home-page--buttons">
+    <button ion-button color="primary" class="done" (click)="nextDay()">
+      Zrobione
+    </button>
+    <button ion-button color="secondary" class="skip" (click)="skipTraining()">
+      Pomiń
+    </button>
+  </div>
+</div>

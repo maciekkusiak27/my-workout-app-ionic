@@ -1,17 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <h2 style="margin-right: 10px;">{{ plan.name }}</h2>
+  <ion-icon name="add" (click)="editPlan()" style="cursor: pointer;"></ion-icon>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content class="ion-padding">
+  <strong>{{ plan.description }}</strong>
+  <div *ngFor="let day of plan.plan">
+    <h4>{{ day.day }}</h4>
+    <p>{{ day.description }}</p>
+    <ul>
+      <li *ngFor="let exercise of day.exercises">
+        {{ exercise.instruction }}
+        <span>{{exercise.weight}} </span>
+        <span>{{exercise.replies}}</span>x<span>{{exercise.series}}</span>
+      </li>
+    </ul>
+  </div>
 </ion-content>

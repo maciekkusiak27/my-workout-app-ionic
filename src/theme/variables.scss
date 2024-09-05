@@ -1,2 +1,24 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+/* src/variables.scss */
+
+:root {
+    --ion-color-primary: #3880ff;
+    --ion-color-secondary: #0cd1e8;
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+
+  --ion-font-family: 'Roboto', sans-serif;
+  }
+  
+  body.dark {
+    --ion-background-color: #222222; 
+    --ion-text-color: #ffffff; 
+    --ion-color-primary: #ca1d1d;
+    --ion-color-secondary: #ffcc00;
+
+  --ion-font-family: 'Roboto', sans-serif;
+  }
+  body {
+    font-family: var(--ion-font-family);
+  }

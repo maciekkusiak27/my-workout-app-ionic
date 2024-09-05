@@ -1,0 +1,51 @@
+.home-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    position: relative; 
+    
+    img {
+      margin-top: 16px;
+      background-color: rgb(48, 48, 48);
+      border-radius: 48px;
+    }
+  
+    ion-content {
+      flex: 1; 
+      text-align: center;
+      padding-bottom: 80px; 
+    }
+  
+    &--buttons {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      position: absolute; 
+      bottom: 16px; 
+      left: 0;
+      right: 0;
+      padding: 10px;
+      
+      button {
+        padding: 10px;
+        border-radius: 10px;
+        width: 128px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      
+      .skip {
+        background-color: #ca1d1d;
+      }
+  
+      .done {
+        background-color: #1dca51;
+      }
+    }
+  }
+  
+  .colorRed {
+    color: #ca1d1d;
+  }
+  
