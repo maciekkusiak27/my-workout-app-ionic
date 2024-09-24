@@ -9,6 +9,11 @@
       <span class="colorRed">{{ exercise.weight }}</span> 
       {{ exercise.series}}x{{ exercise.replies }}
     </p>
+
+    <!-- Wyświetl komunikat, jeśli skippedDays > 0 -->
+    <p *ngIf="skippedDays > 0" class="warning">
+      Pominąłeś już {{ skippedDays }} dni, wracaj do pracy!!
+    </p>
   </ion-content>
 
   <div class="home-page--buttons">

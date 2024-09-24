@@ -1,0 +1,85 @@
+<ion-header *ngIf="plan">
+  <ion-toolbar>
+    <ion-title>Edit Plan</ion-title>
+    <ion-button fill="clear" slot="start" (click)="dismiss()">
+      <ion-icon slot="icon-only" name="backspace"></ion-icon> Back
+    </ion-button>
+    <ion-button fill="clear" slot="end" (click)="save()">Save</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="plan">
+  <ion-item>
+    <ion-label position="stacked">Plan Name</ion-label>
+    <ion-input
+      [(ngModel)]="plan.name"
+      placeholder="Enter plan name"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Plan Description</ion-label>
+    <ion-input
+      [(ngModel)]="plan.description"
+      placeholder="Enter plan description"
+    ></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-card *ngFor="let day of plan.plan; let i = index">
+      <ion-card-header>
+        <ion-card-title>
+          <strong>Day {{ i + 1 }}</strong>
+          <ion-input [(ngModel)]="day.day" placeholder="Day name"></ion-input>
+        </ion-card-title>
+        <ion-card-subtitle>
+          <ion-input
+            [(ngModel)]="day.description"
+            placeholder="Day description"
+          ></ion-input>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let exercise of day.exercises; let j = index">
+            <ion-label>
+              <ion-input
+                [(ngModel)]="exercise.instruction"
+                placeholder="Exercise name"
+              ></ion-input>
+              <ion-input
+                [(ngModel)]="exercise.weight"
+                placeholder="Weight"
+              ></ion-input>
+              <ion-input
+                [(ngModel)]="exercise.replies"
+                type="number"
+                placeholder="Replies"
+              ></ion-input>
+              <ion-input
+                [(ngModel)]="exercise.series"
+                type="number"
+                placeholder="Series"
+              ></ion-input>
+            </ion-label>
+            <ion-button
+              fill="clear"
+              color="danger"
+              (click)="removeExercise(day, j)"
+            >
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="full" (click)="addExercise(day)"
+          >Add Exercise</ion-button
+        >
+      </ion-card-content>
+      <ion-button fill="clear" color="danger" (click)="removeDay(i)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon> Remove Day
+      </ion-button>
+    </ion-card>
+  </ion-list>
+
+  <ion-button expand="full" (click)="addDay()">Add Day</ion-button>
+</ion-content>

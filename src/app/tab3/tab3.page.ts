@@ -6,7 +6,6 @@ import {
   IonContent,
   IonIcon
 } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { addIcons } from 'ionicons';
 import { logoGithub, logoLinkedin, settings } from 'ionicons/icons';
 
@@ -20,7 +19,6 @@ import { logoGithub, logoLinkedin, settings } from 'ionicons/icons';
     IonToolbar,
     IonTitle,
     IonContent,
-    ExploreContainerComponent,
     IonIcon
   ],
 })

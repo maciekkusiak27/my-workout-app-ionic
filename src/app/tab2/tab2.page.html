@@ -1,11 +1,11 @@
 <ion-header>
-  <h2 style="margin-right: 10px;">{{ plan.name }}</h2>
+  <h2 style="margin-right: 10px;">{{ plan?.name }}</h2>
   <ion-icon name="add" (click)="editPlan()" style="cursor: pointer;"></ion-icon>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <strong>{{ plan.description }}</strong>
-  <div *ngFor="let day of plan.plan">
+  <strong>{{ plan?.description }}</strong>
+  <div *ngFor="let day of plan?.plan">
     <h4>{{ day.day }}</h4>
     <p>{{ day.description }}</p>
     <ul>
